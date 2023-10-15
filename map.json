@@ -22,7 +22,7 @@
         },
         "projection": {"type": "albersUsa"},
         
-        "mark": {"type": "circle", "size": 10, "color": "brown"},
+        "mark": {"type": "circle", "size": 100, "color": "steelblue"},
         "encoding": {
           "longitude": {"field": "long", "type": "quantitative"},
           "latitude": {"field": "lat", "type": "quantitative"},
