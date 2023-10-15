@@ -1,33 +1,68 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "School shootings in the US",
-    "width": 1000,
-    "height": 1000,
-    "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
-          "format": {"type": "csv"}
-        },
-        "mark": "bar",
-        "encoding": {
-          "x": {"field": "year", "type": "nominal", "title": "Year"},
-          "y": {
-            "aggregate": "sum",
-            "field": "casualties",
-            "type": "quantitative",
-            "title": "Total of victims"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "School shootings in the US",
+  "width": 10000,
+  "height": 5000,  // Adjust the height as needed
+
+
+
+
+  "hconcat": [
+    {
+      "width" : 450,
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
+            "format": {"type": "csv"}
           },
-          "tooltip" : [
-            {"aggregate" : "sum", "field" : "casualties", "type" : "quantitative", "title " : "casualties" },
-            {"aggregate" : "sum", "field" : "injured", "type" : "quantitative", "title " : "injured" },
-            {"aggregate" : "sum", "field" : "killed", "type" : "quantitative", "title " : "killed" }
-  
-           
-          ]
+          "mark":  {"type": "bar", "color": "lightblue"},
+          "encoding": {
+            "x": {"field": "year", "type": "nominal", "title": "Year"},
+            "y": {
+              "aggregate": "sum",
+              "field": "casualties",
+              "type": "quantitative",
+              "title": "Total of victims"
+            },
+            "tooltip": [
+              {"aggregate": "sum", "field": "casualties", "type": "quantitative", "title": "casualties"},
+              {"aggregate": "sum", "field": "injured", "type": "quantitative", "title": "injured"},
+              {"aggregate": "sum", "field": "killed", "type": "quantitative", "title": "killed"}
+            ]
+          }
         }
-     
-      }
-    ]
-  }
-  
+      ],
+    },
+    {
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
+            "format": {"type": "csv"}
+          },
+          "transform": [
+            {
+              "calculate" :  "(datum.gender_shooter1 === 'h' ? 'Unknown' : datum.gender_shooter1 === 'm' ? 'Male' : datum.gender_shooter1 === 'f' ? 'Female' : 'Unknown')", 
+              "as" : "gender_category"
+
+            },
+            {
+              "aggregate": [{ "op": "count", "as": "count" }],
+              "groupby": ["gender_category"]
+            }
+          ],
+          "mark": { "type": "arc", "innerRadius": 40 },
+          "encoding": {
+            "theta": { "field": "count", "type": "quantitative", "title": "Count" },
+            "color": { "field": "gender_category", "type": "nominal", "title" : "Gender of the shooter"},
+            "tooltip": [
+              { "field": "gender_category", "type": "nominal", "title": "Gender"},
+              { "field": "count", "type": "quantitative" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
