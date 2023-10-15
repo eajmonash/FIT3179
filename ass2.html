@@ -18,13 +18,15 @@
 
     <body>
       <div class="title">
-        <h1>  School shootings in the United States</h1>
-        <h2> by Eveline Janssen - FIT 3179  </h2>
+        <h1>School shootings in the United States</h1>
+        <h4> by Eveline Janssen </h4>
+        <h5> FIT 3179</h5>
   
       </div>
 
 
         <div class = "containtermap">
+            <div id="map" ></div>
 
             <div class = "maptext">
                 <h3> Introduction</h3>
@@ -32,9 +34,15 @@
                     for this visualisation you can see the visualisation of the 
                     school shootings in the US, ranging from 1998 till 2023.
                 </p>
-            </div>            
-            <div id="map" ></div>
+            </div>
+        </div>
 
+        <div class "barcontainer">
+            <div id = "barchart"></div>
+            <div class = "bartext">
+                <p> in this bar chart the total number of casualities is visible and also the 
+                    number of killed people and the number of injured people
+            </div>
         </div>
 
 
@@ -44,6 +52,13 @@
             vegaEmbed("#map", vg_1)
             .then(function(result){
 
+            })
+            .catch(console.error);
+
+            var vg_2 = "barchart.json";
+            vegaEmbed("#barchart", vg_2)
+            .then(function(result){
+              
             })
             .catch(console.error);
         </script>
