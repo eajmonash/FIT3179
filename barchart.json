@@ -3,17 +3,28 @@
     "title": "School shootings in the US",
     "width": 1000,
     "height": 500,   
+    "config" :{
+      "axis" : {
+        "labelFontSize" : 18,
+        "titleFontSize" : 20
+      },
+      "legend" : {
+        "labelFontSize" : 17,
+        "titleFontSize" : 20
+      }
+    },
   
     "hconcat": [
       {
-        "width" : 450,
+        "width" : 550,
+        "height" : 250,
         "layer": [
           {
             "data": {
               "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
               "format": {"type": "csv"}
             },
-            "mark":  {"type": "bar", "color": "lightblue"},
+            "mark":  {"type": "bar", "color": "darkgreen"},
             "encoding": {
               "x": {"field": "year", "type": "nominal", "title": "Year"},
               "y": {
@@ -49,15 +60,24 @@
                 "groupby": ["gender_category"]
               }
             ],
-            "mark": { "type": "arc", "innerRadius": 40 },
+
+            "mark": { "type": "arc", "innerRadius": 80 },
+            "width" : 500,
+            "height" : 300,
             "encoding": {
               "theta": { "field": "count", "type": "quantitative", "title": "Count" },
-              "color": { "field": "gender_category", "type": "nominal", "title" : "Gender of the shooter"},
+              "color": { "field": "gender_category",
+               "type": "nominal",
+               "title" : "Gender of the shooter"},
+               "scale" : {
+                "range" : ["#933710", "#EC9832", "#D82E08", "#F5E412"]
+               },
               "tooltip": [
                 { "field": "gender_category", "type": "nominal", "title": "Gender"},
                 { "field": "count", "type": "quantitative" }
               ]
-            }
+            },
+            
           }
         ]
       }
