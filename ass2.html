@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <script src= "vega_lite_vis.js"></script>
+    
+    
+    
+
+     <!-- CSS file -->
+     <link rel="stylesheet" type="text/css" href="css/styles3.css" media="all" />
+    </head>
+
+    <body>
+      <div class="title">
+        <h1>School shootings in the United States</h1>
+        <h4> by Eveline Janssen </h4>
+        <h5> FIT 3179</h5>
+  
+      </div>
+
+
+        <div class = "containtermap">
+            <div id="map" ></div>
+
+            <div class = "maptext">
+                <h3> Introduction</h3>
+                <p> 
+                    for this visualisation you can see the visualisation of the 
+                    school shootings in the US, ranging from 1998 till 2023.
+                </p>
+            </div>
+        </div>
+
+
+        <script type = "text/javascript">
+
+            var vg_1 = "map.json";
+            vegaEmbed("#map", vg_1)
+            .then(function(result){
+
+            })
+            .catch(console.error);
+        </script>
+        </body>
+</html>
+
+
+   
+    
+
+
+
+
+    

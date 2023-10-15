@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Number of school shootings in the US from 1998 - 2023",
+    "width": 1000,
+    "height": 1000,
+    
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/vega/vega/main/docs/data/us-10m.json",
+          "format": {"type": "topojson", "feature": "states"}
+        },
+        "projection": {"type": "albersUsa"},
+        "width": 700,
+        "height": 450,
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+        "encoding": {"text": {"field": "state", "type": "nominal"}}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv"
+        },
+        "projection": {"type": "albersUsa"},
+        
+        "mark": {"type": "circle", "size": 10, "color": "brown"},
+        "encoding": {
+          "longitude": {"field": "long", "type": "quantitative"},
+          "latitude": {"field": "lat", "type": "quantitative"},
+          "tooltip": [
+            {"field": "state", "type": "nominal", "title": "State"},
+            {"field": "city", "type": "nominal", "title": "City"},
+            {"field": "year", "type": "quantitative", "title": "Year"},
+            {"field": "killed", "type": "quantitative", "title": "Killed"},
+            {"field": "injured", "type": "quantitative", "title": "Injured"}
+          ]
+        }
+      }
+    ]
+  }
+  
