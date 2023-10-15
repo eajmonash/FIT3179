@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "School shootings in the US",
+    "width": 1000,
+    "height": 1000,
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
+          "format": {"type": "csv"}
+        },
+        "mark": "bar",
+        "encoding": {
+          "x": {"field": "year", "type": "nominal", "title": "Year"},
+          "y": {
+            "aggregate": "sum",
+            "field": "casualties",
+            "type": "quantitative",
+            "title": "Total of victims"
+          },
+          "tooltip" : [
+            {"aggregate" : "sum", "field" : "casualties", "type" : "quantitative", "title " : "casualties" },
+            {"aggregate" : "sum", "field" : "injured", "type" : "quantitative", "title " : "injured" },
+            {"aggregate" : "sum", "field" : "killed", "type" : "quantitative", "title " : "killed" }
+  
+           
+          ]
+        }
+     
+      }
+    ]
+  }
+  
