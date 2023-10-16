@@ -9,59 +9,38 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
+    <link rel="stylesheet" href="style.css">
     <script src= "vega_lite_vis.js"></script>
-    <style id="vega-tooltip-style">#vg-tooltip-element {
-        visibility: hidden;
-        padding: 8px;
-        position: fixed;
-        z-index: 1000;
-        font-family: sans-serif;
-        font-size: 11px;
-        border-radius: 3px;
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: rgba(255, 255, 255, 0.95);
-        border: 1px solid #d9d9d9;
-        color: black; }
-        #vg-tooltip-element.visible {
-          visibility: visible; }
-        #vg-tooltip-element h2 {
-          margin-top: 0;
-          margin-bottom: 10px;
-          font-size: 13px; }
-        #vg-tooltip-element img {
-          max-width: 200px;
-          max-height: 200px; }
-        #vg-tooltip-element table {
-          border-spacing: 0; }
-          #vg-tooltip-element table tr {
-            border: none; }
-            #vg-tooltip-element table tr td {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              padding-top: 2px;
-              padding-bottom: 2px; }
-              #vg-tooltip-element table tr td.key {
-                color: #808080;
-                max-width: 150px;
-                text-align: right;
-                padding-right: 4px; }
-              #vg-tooltip-element table tr td.value {
-                display: block;
-                max-width: 300px;
-                max-height: 7em;
-                text-align: left; }
-        #vg-tooltip-element.dark-theme {
-          background-color: rgba(32, 32, 32, 0.9);
-          border: 1px solid #f5f5f5;
-          color: white; }
-          #vg-tooltip-element.dark-theme td.key {
-            color: #bfbfbf; }
-      </style>
-    
-    
+
 
      <!-- CSS file -->
+     
      <link rel="stylesheet" type="text/css" href="css/styles3.css" media="all" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    
+     <style>
+     body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-align: center;
+        background-color: #f0f0f0;
+    }
+
+    .visualization {
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    p {
+        color: #000000;
+    }
+
+    </style>
     </head>
 
     <body>
@@ -75,62 +54,56 @@
       </div>
 
 
-        <div class = "containtermap">
+    <div class = "containtermap">
             
-            <div class = "maptext">
-                <div style = "text-align : right;">
-                <h3> Introduction</h3>
-                <p> 
-                    for this visualisation you can see the visualisation of the 
-                    school shootings in the US, ranging from 1998 till 2023.
-                </p>
-                </div>
-                <div id="map" ></div>
+         <div class = "maptext">
+            <div style = "text-align : right;">
+            <h3> Introduction</h3>
+            <p> 
+                for this visualisation you can see the visualisation of the 
+                school shootings in the US, ranging from 1998 till 2023.
+            </p>
+            </div>
+            <div id="map" ></div>
+        </div>
+    </div>
+
+    <div class = "barcontainer">
+        <div class = "bartext">
+            <p> in this bar chart the total number of casualities is visible and also the 
+                number of killed people and the number of injured people</p>
+        <div id = "barchart"></div>
+        </div>
+    </div>
+
+
+    <div class = "boxcontainer">
+        <div id = "boxplot"></div>
+        <div class = "boxtext">
+            <div style = "text-align : left;">
+            <p>in this boxplot you can see the division between the age of the shooter. it is 
+                and the type of target the shooting was.
+            </p>
             </div>
         </div>
-
-        <div class "barcontainer">
-            <div class = "bartext">
-                <p> in this bar chart the total number of casualities is visible and also the 
-                    number of killed people and the number of injured people</p>
-            <div id = "barchart"></div>
-            </div>
-        </div>
-
-
-        <div class "boxcontainer">
-            <div id = "boxplot"></div>
-            <div class = "boxtext">
-                <div style = "text-align : left;">
-                <p>in this boxplot you can see the division between the age of the shooter. it is 
-                    and the type of target the shooting was.
-                </p>
-                </div>
-            </div>
-        </div>
+    </div>
 
 
         <script type = "text/javascript">
 
             var vg_1 = "map.json";
-            vegaEmbed("#map", vg_1)
-            .then(function(result){
-
+            vegaEmbed("#map", vg_1).then(function(result){
             })
             .catch(console.error);
 
             var vg_2 = "barchart.json";
-            vegaEmbed("#barchart", vg_2)
-            .then(function(result){
-              
+            vegaEmbed("#barchart", vg_2).then(function(result){
             })
             .catch(console.error);
 
 
             var vg_3 = "boxplot.json";
-            vegaEmbed("#boxplot", vg_3)
-            .then(function(result){
-
+            vegaEmbed("#boxplot", vg_3).then(function(result){
             })
             .catch(console.error);
 
