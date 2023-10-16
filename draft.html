@@ -77,7 +77,7 @@
                 <div id="us_map", class = "map_vis"></div>
             </div>
             <div class = "pure-u-1-2">
-                <div class = "description description-left", style = "padding-top: 20%;> 
+                <div class = "description description-left", style = "padding-top: 15%;"> 
                     <h3> Number of shooting in per state</h3>
                     <p>This map depicts school shootings that happened in the United States between 1998 and 2023.
                         Each marker represents a different shooting. Exploring this map allows you to discover 
@@ -103,10 +103,13 @@
             </div>       
         </div>
         <div class= "pure-g", style = "background-color: #ffffff;">
-            <div class="pure-u-1-1", style="float: right">
+            <div class="pure-u-1-2", style="float: right">
                 <div id="barchart", class = "row", style = "padding-top: 5%;"></div>
             </div>
+            <div class = "pure-u-1-2", style = "float: left">
+                <div id="donut", class = "row", style = "padding-top: 5%;"></div>
         </div>
+    </div>
         
         <div class="pure-g", style = "background-color: #ffffff;">
             <div class="pure-u-1-2", style="float: left">
@@ -135,8 +138,13 @@
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        var vis_3 = "boxplot.json";
-        vegaEmbed('#plot', vis_3).then(function(result) {
+        var vis_3 = "donutchart.json";
+        vegaEmbed('#donut', vis_3).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vis_4 = "boxplot.json";
+        vegaEmbed('#plot', vis_4).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
