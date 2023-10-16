@@ -1,8 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "School shootings in the US",
     "width": 1000,
-    "height": 500,  
+    "height": 800,  
     "config" : {
       "axis" : {
         "labelFontSize" : 18,
@@ -62,7 +61,7 @@
               }
             ],
             "mark": { "type": "arc", "innerRadius": 80 },
-            "width" : 500,
+            "width" : 400,
             "height" : 300,
             "encoding": {
               "theta": { "field": "count", "type": "quantitative", "title": "Count" },
