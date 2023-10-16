@@ -2,21 +2,22 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "School shootings in the US",
     "width": 1000,
-    "height": 500,   
-    "config" :{
+    "height": 500,  
+    "config" : {
       "axis" : {
         "labelFontSize" : 18,
         "titleFontSize" : 20
       },
-      "legend" : {
+      "legend": {
         "labelFontSize" : 17,
         "titleFontSize" : 20
       }
     },
+
   
     "hconcat": [
       {
-        "width" : 550,
+        "width" : 450,
         "height" : 250,
         "layer": [
           {
@@ -24,7 +25,7 @@
               "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
               "format": {"type": "csv"}
             },
-            "mark":  {"type": "bar", "color": "darkgreen"},
+            "mark":  {"type": "bar", "color": "darkcyan"},
             "encoding": {
               "x": {"field": "year", "type": "nominal", "title": "Year"},
               "y": {
@@ -60,24 +61,17 @@
                 "groupby": ["gender_category"]
               }
             ],
-
             "mark": { "type": "arc", "innerRadius": 80 },
             "width" : 500,
             "height" : 300,
             "encoding": {
               "theta": { "field": "count", "type": "quantitative", "title": "Count" },
-              "color": { "field": "gender_category",
-               "type": "nominal",
-               "title" : "Gender of the shooter"},
-               "scale" : {
-                "range" : ["#933710", "#EC9832", "#D82E08", "#F5E412"]
-               },
+              "color": { "field": "gender_category", "type": "nominal", "title" : "Gender of the shooter"},
               "tooltip": [
                 { "field": "gender_category", "type": "nominal", "title": "Gender"},
                 { "field": "count", "type": "quantitative" }
               ]
-            },
-            
+            }
           }
         ]
       }
