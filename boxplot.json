@@ -11,7 +11,7 @@
     "config": {
       "axis": {
         "labelFontSize" : 18,
-        "titleFontSize" : 20,
+        "titleFontSize" : 20
       },
       "legend": {
         "labelFontSize" : 14,
