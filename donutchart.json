@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
+    "format": { "type": "csv" }
+  },
+  "transform": [
+    {
+      "calculate": "(datum.gender_shooter1 === 'h' ? 'Unknown' : datum.gender_shooter1 === 'm' ? 'Male' : datum.gender_shooter1 === 'f' ? 'Female' : 'Unknown')",
+      "as": "gender_category"
+    },
+    {
+      "aggregate": [{ "op": "count", "as": "count" }],
+      "groupby": ["gender_category"]
+    }
+  ],
+  "mark": { "type": "arc", "innerRadius": 80 },
+  "width": 400,
+  "height": 300,
+  "encoding": {
+    "theta": { "field": "count", "type": "quantitative", "title": "Count" },
+    "color": { "field": "gender_category", "type": "nominal", "title": "Gender of the shooter" },
+    "tooltip": [
+      { "field": "gender_category", "type": "nominal", "title": "Gender" },
+      { "field": "count", "type": "quantitative" }
+    ]
+  }
+}
