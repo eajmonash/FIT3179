@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Number of school shootings in the US from 1998 - 2023",
     "width": 1000,
     "height": 1000,
     
