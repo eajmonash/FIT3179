@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
+    "width": 1300,
     "height": 800,  
     "config" : {
       "axis" : {
@@ -16,8 +16,8 @@
   
     "hconcat": [
       {
-        "width" : 450,
-        "height" : 250,
+        "width" : 550,
+        "height" : 350,
         "layer": [
           {
             "data": {
@@ -61,8 +61,8 @@
               }
             ],
             "mark": { "type": "arc", "innerRadius": 80 },
-            "width" : 400,
-            "height" : 300,
+            "width" : 500,
+            "height" : 400,
             "encoding": {
               "theta": { "field": "count", "type": "quantitative", "title": "Count" },
               "color": { "field": "gender_category", "type": "nominal", "title" : "Gender of the shooter"},
