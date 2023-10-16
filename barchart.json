@@ -10,8 +10,8 @@
   },
   "layer": [
     {
-      "width": 550,
-      "height": 250,
+      "width": 600,
+      "height": 400,
       "data": {
         "url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv",
         "format": { "type": "csv" }
