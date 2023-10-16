@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style id="vega-tooltip-style"></style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src= "vega_lite_vis.js"></script>
+
+
+     <!-- CSS file -->
+     
+     <link rel="stylesheet" type="text/css" href="css/styles3.css" media="all" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    
+     <style>
+     body {
+        font-family: Arial, sans-serif;
+        padding: 60px;
+        text-align: justify;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        padding: 38px;
+        color: #1a1313;
+    }
+
+    p {
+        font-size: medium;
+        color: #000000;
+    }
+
+    </style>
+    </head>
+
+    <body>
+    <div class = "page">
+        <div class="pure-g", style = "background-color: #ffffff">
+            <div class="pure-u-1-5"></div>
+            <div class="pure-u-1-5"></div>
+            <div class="pure-u-1-5"></div>
+                <h1 class = "title">School shootings in the United States (1998-2023)</h1>
+                <h3>By Eveline Janssen (34201157) </h3>
+                <h5> FIT 3179</h5>
+            </div>
+            <div class="pure-u-1-5"></div>
+            <div class="pure-u-1-5"></div>
+
+
+        </div>
+        <div class="pure-g", style = "background-color: #ffffff;">
+            <div class="pure-u-1-1">
+                <p class = "paragraph"> Explore the geography of school shootings across the United States and gain insights 
+                    into annual trends with our visualizations. The map displays locations of school shootings, while a bar chart
+                     shows the annual counts of incidents, including the number of casualties. Dive into the data to better 
+                     understand the impact of these tragic events over time.</p>
+            </div>
+        </div>
+        <div class="pure-g", style = "background-color: #ffffff;">
+            <div class="pure-u-1-1">
+                <div id="us_map", class = "big_viz"></div>
+            </div>
+        </div>
+        <div class="pure-g", style = "background-color: #ffffff;">
+            <div class="pure-u-1-2", style="float: left">
+                <p class = "paragraph_left", style = "padding-top: 5%;"> All the shootings take most place in the east
+                    of the country.  .</p>
+            </div>
+            <div class="pure-u-1-2", style="float: right">
+                <div id="barchart", class = "row", style = "padding-top: 5%;"></div>
+            </div>
+        </div>
+        <div class="pure-g", style = "background-color: #E3F4F4;">
+            <div class="pure-u-1-2", style="float: left">
+                <div id="plot", class = "row", style = "padding-top: 5%;"></div>
+            </div>
+            <div class="pure-u-1-2", style="float: right">
+                <p class = "paragraph_right", style = "padding-top: 5%;"><b>Crash data by gender</b> shows that <b>females between 40 and 64</b> have the highest crash count among females, 
+                    while <b>males aged 17 to 25</b> top the list among males. Notably, the <b>overall highest crash count is among 17 to 25-year-old males</b>, 
+                    with a total of <b>10,584 accidents</b>, highlighting the importance of age and gender in traffic safety analysis.</p>
+            </div>
+        </div>
+        <div id="line_graph", class = "bottom_viz", style = "background-color: #F8F6F4;"></div>
+    </div>
+
+    <script type="text/javascript">
+        var vis_1 = "map.json";
+        vegaEmbed('#us_map', vis_1).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vis_2 = "barchart.json";
+        vegaEmbed('#barchart', vis_2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vis_3 = "boxplot.json";
+        vegaEmbed('#plot', vis_3).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+       
+    </script>
+    </body>
+</html>
+
+
+   
+    
+
+
+
+
+    
