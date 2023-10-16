@@ -2,21 +2,11 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A vertical box plot showing median, min, and max body mass of penguins.",
     "data": {"url": "https://raw.githubusercontent.com/washingtonpost/data-school-shootings/master/school-shootings-data.csv"},
-    "width" : 600,
+    "width" : 550,
     "height" : 350,
     "mark": {
       "type": "boxplot",
       "extent": "min-max"
-    },
-    "config": {
-      "axis": {
-        "labelFontSize" : 18,
-        "titleFontSize" : 20
-      },
-      "legend": {
-        "labelFontSize" : 14,
-        "titleFontSize" : 19
-      }
     },
     "encoding": {
       "x": {"field": "shooting_type", "type": "nominal", "title" : "Shooting type"},
@@ -29,5 +19,14 @@
         
          }
       },
+    "config": {
+      "axis": {
+        "labelFontSize": 14,
+        "titleFontSize": 18 
+      },
+      "legend": {
+        "labelFontSize": 14,
+        "titleFontSize" : 18
+    }
   }
-  
+  }
