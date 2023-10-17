@@ -2,6 +2,25 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 1000,
     "height": 1000,
+    "params": [
+        {
+            "name": "year_data",
+            "value": 1998, 
+            "bind": {
+                "input": "range",
+                "min": 1998,
+                "max": 2023,
+                "step": 1,
+                "name": "Select year:"
+      }
+    }
+  ],
+  "transform": [
+
+    {
+      "filter": "datum.numeric_year > year_data"
+    }
+  ],
     
     "layer": [
       {
