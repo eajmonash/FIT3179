@@ -70,7 +70,7 @@
         </div>
         <div class="pure-g", style = "background-color: #ffffff;">
             <div class="pure-u-1-1">
-                <h2 class="underline"> Annual numbers of shootings </h2>
+                <h2 class="underline"> Introduction </h2>
                 <p class = "paragraph"> 
                     Explore the geography of school shootings across the United States and gain insights
                     into annual trends with our visualizations. The map displays locations of school shootings, while a bar chart
@@ -142,22 +142,22 @@
 
     <script type="text/javascript">
         var vis_1 = "map.json";
-        vegaEmbed('#us_map', vis_1, { "actions": false, "tooltip": { theme: 'custom' } }).then(function(result) {
+        vegaEmbed('#us_map', vis_1 }).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vis_2 = "barchart.json";
-        vegaEmbed('#barchart', vis_2, { "actions": false, "tooltip": { theme: 'custom' } }).then(function(result) {
+        vegaEmbed('#barchart', vis_2 }).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vis_3 = "donutchart.json";
-        vegaEmbed('#donut', vis_3, { "actions": false, "tooltip": { theme: 'custom' } }).then(function(result) {
+        vegaEmbed('#donut', vis_3 }).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
         var vis_4 = "boxplot.json";
-        vegaEmbed('#plot', vis_4, { "actions": false, "tooltip": { theme: 'custom' } }).then(function(result) {
+        vegaEmbed('#plot', vis_4 }).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
